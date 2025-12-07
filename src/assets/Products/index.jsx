@@ -14,6 +14,18 @@ const Products = () => {
                 <img src={products}
                     alt="products"
                     className='product-img' />
+
+                <img src={products}
+                    alt="products"
+                    className='product-img' />
+
+                <img src={products}
+                    alt="products"
+                    className='product-img' />
+
+                <img src={products}
+                    alt="products"
+                    className='product-img' />
             </div>
 
         </>
