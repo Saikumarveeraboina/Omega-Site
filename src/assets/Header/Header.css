@@ -1,135 +1,124 @@
-/* Desktop and Global Styles */
+/* ---------------- Global ---------------- */
 .website-logo {
   width: 150px;
 }
 
-nav {
+.navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: #0f172a;
+  background: #0f172a;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-nav ul {
-  list-style-type: none;
+/* ---------------- Desktop Menu ---------------- */
+.desktop-menu {
   display: flex;
   gap: 30px;
-  justify-content: center;
   align-items: center;
+  list-style: none;
 }
 
-nav ul li a {
+.desktop-menu li a {
+  color: white;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 400;
 }
 
-nav ul li a:not(.active):hover {
-  background-color: #60a5fa;
-  color: #ffffff;
+.desktop-menu li a.active {
+  background: #007bff;
+  padding: 8px 16px;
   border-radius: 4px;
-  transition: 0.5s;
+  color: white !important;
+  font-weight: 600;
 }
 
-/* Hamburger button (hidden on desktop) */
-nav .menu {
-  position: absolute;
-  display: none;
-  top: 0.75rem;
-  right: 1rem;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2.25rem;
-  height: 2rem;
-  cursor: pointer;
-}
-
-nav .menu span {
-  height: 0.3rem;
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-/* Logout Button */
 .logout-button {
-  background-color: #ef4444;
+  background: #ef4444;
   color: white;
   border: none;
   padding: 8px 16px;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+/* ---------------- Hamburger (mobile only) ---------------- */
+.menu {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 0.8rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.menu span {
+  width: 100%;
+  height: 3px;
+  background: white;
   border-radius: 4px;
 }
 
-/* ---------- Mobile Styles ---------- */
+/* ---------------- Mobile Drawer ---------------- */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  height: 100vh;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
+  transition: 0.4s ease-in-out;
+  z-index: 9999;
+}
+
+.mobile-drawer.open {
+  left: 0;
+}
+
+.mobile-drawer a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.mobile-drawer a.active {
+  color: #e19b0f;
+  font-weight: 700;
+}
+
+.close-btn {
+  align-self: flex-end;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-drawer .logout-button {
+  background: none;
+  color: red;
+  font-size: 18px;
+  padding: 0;
+  text-align: left;
+}
+
+/* ---------------- Mobile Overrides ---------------- */
 @media (max-width: 780px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav .menu {
-    display: flex;
-  }
-
-  nav ul {
+  .desktop-menu {
     display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    width: 100%;
-    margin-top: 20px;
   }
 
-  nav ul.open {
+  .menu {
     display: flex;
   }
-
-  nav ul li {
-    width: 100%;
-    margin: 0;
-    padding: auto;
-  }
-
-  nav ul li a {
-    width: 100%;
-    display: block;
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-  }
-
-  nav ul li a:not(.active):hover {
-    background-color: transparent;
-  }
-
-  /* Mobile active style */
-  .active {
-    background-color: transparent !important;
-    color: #e19b0f;
-    padding: 0;
-    margin: 0;
-    font-weight: 400;
-  }
-
-  .logout-button {
-    background: transparent;
-    padding: 0;
-    color: #ef4444;
-    font-size: 18px;
-  }
-}
-
-/* ---------- Desktop active style ---------- */
-.active {
-  background-color: #007bff;
-  font-weight: 600;
-  color: #ffffff !important;
-  padding: 8px 16px;
-  border-radius: 4px;
-  opacity: 0.9;
 }
