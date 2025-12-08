@@ -6,10 +6,9 @@ const Slider = () => {
         <>
             <div className="ticker-container">
                 <div className="ticker-move">
-                    <span>We are developing this website, Stay Tuned • </span>
-                    <span>We are developing this website, Stay Tuned • </span>
-                    <span>We are developing this website, Stay Tuned • </span>
-                    <span>We are developing this website, Stay Tuned • </span>
+                    <span className='heading'>We are developing this website, Stay Tuned @VSK • </span>
+                    <span className='heading'>We are developing this website, Stay Tuned @VSK • </span>
+                
                 </div>
             </div>
         </>

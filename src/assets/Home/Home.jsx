@@ -40,8 +40,8 @@ const Home = () => {
             </div>
           </Slider>
         </section>
-        
-
+        </div>
+        <div className="home-content">
         {/* SHOP NOW BUTTON */}
         <h1 className="home-title">Welcome to Vsk Trendz</h1>
         <p className="home-subtitle">Discover the latest trends in fashion and style</p>

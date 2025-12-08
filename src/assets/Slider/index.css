@@ -1,25 +1,31 @@
 .ticker-container {
   width: 100%;
-  background: #eab308;
+  background: #c3e808;
   overflow: hidden;
   padding: 10px 0;
   position: relative;
   white-space: nowrap;
   margin-top: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.heading{
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(204, 16, 26);
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .ticker-move {
   display: inline-block;
   white-space: nowrap;
   animation: smooth-loop 15s linear infinite;
+   font-size: 26px;
+    color: blueviolet;
 }
 
-.ticker-move span {
-  font-size: 20px;
-  font-weight: 700;
-  color: black;
-  padding-right: 50px;
-}
 
 /* FIX: Start fully off-screen on the right */
 @keyframes smooth-loop {
