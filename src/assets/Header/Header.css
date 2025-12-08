@@ -1,13 +1,5 @@
-.active{
-  background-color: #007BFF;
-  font-weight: 600;
-  color: #ffffff;
-  padding: 8px 16px;
-  border-radius: 4px;
-  opacity: 0.9;
-}
-
-.website-logo{
+/* Desktop and Global Styles */
+.website-logo {
   width: 150px;
 }
 
@@ -17,9 +9,11 @@ nav {
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #0f172a;
-  position: sticky ;
+  position: sticky;
   top: 0;
+  z-index: 1000;
 }
+
 nav ul {
   list-style-type: none;
   display: flex;
@@ -27,35 +21,23 @@ nav ul {
   justify-content: center;
   align-items: center;
 }
+
 nav ul li a {
   text-decoration: none;
-  color: #ffff;
+  color: #ffffff;
   font-weight: 400;
 }
+
 nav ul li a:not(.active):hover {
   background-color: #60a5fa;
-    color: #ffffff;
+  color: #ffffff;
   padding: 5px;
   border-radius: 4px;
   transition: 0.5s;
 }
 
-nav .cart-icon {
-  position: relative;
-}
-
-.logout-button {
-  background-color: #ef4444;
-  color: white;
-  border: none;
- padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
- 
-
-}
-
-nav .menu{
+/* Hamburger button (hidden on desktop) */
+nav .menu {
   position: absolute;
   display: none;
   top: 0.75rem;
@@ -64,63 +46,85 @@ nav .menu{
   justify-content: space-between;
   width: 2.25rem;
   height: 2rem;
-
+  cursor: pointer;
 }
 
-nav .menu span{
-  height: 0.4rem;
+nav .menu span {
+  height: 0.3rem;
   width: 100%;
   background-color: #ffffff;
   border-radius: 10px;
 }
 
-@media (max-width: 480px) {
-  nav ul li {
-    font-size: 14px;
-    width: 100%;
-    text-align: left;
-  }
-  nav ul li a:not(.active):hover {
-  background-color: transparent;
-    color: #ffffff;
+/* Logout Button */
+.logout-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
   border-radius: 4px;
-  transition: 0.5s;
 }
 
-
-  .active {
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    color: #ef4444;
-  }
-
-  .logout-button {
-    margin-left: 0;
-    padding-left: 0;
-    font-size: 16px;
-    text-align: left;
-    background-color: transparent;
-  }
-
+/* ---------- Mobile Styles ---------- */
+@media (max-width: 780px) {
   nav {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  nav .menu {
+    display: flex;
+  }
+
   nav ul {
     display: none;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
     width: 100%;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    margin-top: 20px;
   }
+
   nav ul.open {
     display: flex;
-}
-  
-  nav .menu {
-    display: flex;
   }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    width: 100%;
+    display: block;
+    padding: 8px 5px;
+  }
+
+  nav ul li a:not(.active):hover {
+    background-color: transparent;
+  }
+
+  /* Mobile active style */
+  .active {
+    background-color: transparent !important;
+    color: #3b82f6;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  .logout-button {
+    background: transparent;
+    padding: 0;
+    color: #ef4444;
+  }
+}
+
+/* ---------- Desktop active style ---------- */
+.active {
+  background-color: #007bff;
+  font-weight: 600;
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 4px;
+  opacity: 0.9;
 }
