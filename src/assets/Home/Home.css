@@ -63,4 +63,9 @@
   .carousel-img {
     height: 210px;
   }
+  .home-image{
+    width: 400px;
+    height: auto;
+    margin-top: 20px;
+  }
 }

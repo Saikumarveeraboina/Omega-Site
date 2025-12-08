@@ -1,13 +1,13 @@
 .ticker-container {
   width: 100%;
-  background: #c3e808;
+  background: white;
   overflow: hidden;
   padding: 10px 0;
   position: relative;
   white-space: nowrap;
-  margin-top: 20px;
+  margin-top: 2px;
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 .heading{
     font-size: 28px;

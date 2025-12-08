@@ -46,6 +46,8 @@ const Home = () => {
         <h1 className="home-title">Welcome to Vsk Trendz</h1>
         <p className="home-subtitle">Discover the latest trends in fashion and style</p>
         <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png" alt="home" className="home-image" />
+        <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png" alt="home" className="home-image" />
+        <h1> Explore NavBar features</h1>
         
         <Link to="/products"> <button className="shop-now-button">Shop Now</button> </Link>
       </div>
