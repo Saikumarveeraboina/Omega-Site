@@ -7,11 +7,13 @@ import About from './assets/About/index'
 import Contact from './assets/Contact/index'
 import Footer from './assets/Footer/index'
 import Header from './assets/Header/Header'
+import Slider from './assets/Slider/index'
 
 const App = () => {
   return (
     <div className="app-layout">
       <Header />
+      <Slider />
 
       <main className="page-content">
         <Routes>

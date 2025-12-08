@@ -1,0 +1,32 @@
+.ticker-container {
+  width: 100%;
+  background: #eab308;
+  overflow: hidden;
+  padding: 10px 0;
+  position: relative;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.ticker-move {
+  display: inline-block;
+  white-space: nowrap;
+  animation: smooth-loop 15s linear infinite;
+}
+
+.ticker-move span {
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  padding-right: 50px;
+}
+
+/* FIX: Start fully off-screen on the right */
+@keyframes smooth-loop {
+  0% {
+    transform: translateX(100%); /* start fully from right */
+  }
+  100% {
+    transform: translateX(-100%); /* exit fully to the left */
+  }
+}

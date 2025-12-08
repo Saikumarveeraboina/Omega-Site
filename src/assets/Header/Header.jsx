@@ -12,6 +12,12 @@ const Header = () => {
       <Link to="/">
         <img src={logo} alt="logo" className="website-logo" />
       </Link>
+      {/* Search Input */}
+      <div className="search-container">
+      <input type="text" id="input" className="search-checkbox" placeholder="Search"/>
+      <label htmlFor="input" className="search-icon">🔍</label>
+      </div>
+      
 
       {/* Hamburger */}
       <div className="menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -27,10 +33,11 @@ const Header = () => {
         <li><NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink></li>
         <li><NavLink to="/products" onClick={() => setIsMenuOpen(false)}>Products</NavLink></li>
         <li><NavLink to="/cart" onClick={() => setIsMenuOpen(false)}>Cart</NavLink></li>
+        <li><NavLink to="/about" onClick={() => setIsMenuOpen(false)}>About</NavLink></li>
         <li><NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink></li>
 
         <button className="logout-button" onClick={() => setIsMenuOpen(false)}>
-          Logout
+          Login
         </button>
       </ul>
 
@@ -39,9 +46,10 @@ const Header = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/products">Products</NavLink></li>
         <li><NavLink to="/cart">Cart</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
 
-        <button className="logout-button">Logout</button>
+        <button className="logout-button">Login</button>
       </ul>
     </nav>
   );
