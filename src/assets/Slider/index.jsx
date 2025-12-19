@@ -6,8 +6,8 @@ const Slider = () => {
         <>
          <div className="ticker-container">
                 <div className="ticker-move">
-                    <span className='heading'>We are developing this website, Stay Tuned @VSK • </span>
-                    <span className='heading'>We are developing this website, Stay Tuned @VSK • </span>
+                    <span className='heading'>This Website is Only for Omega Pg MCA students • </span>
+                    <span className='heading'>This website is under development @OMEGA PG COLLEGE• </span>
                 
                 </div>
             </div>
