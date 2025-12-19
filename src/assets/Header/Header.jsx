@@ -22,7 +22,7 @@ const Header = () => {
           <div>
             <a href="tel:+919246805933" style={{ textDecoration: 'none', marginLeft: '20px', display: 'flex', alignItems: 'center' }}>
               <FaPhoneAlt color="white" size={16} />
-              <span style={{ color: 'white', marginLeft: '6px' }}>
+              <span style={{ color: 'white', marginLeft: '6px' }}> 
                 +91 9246805933
               </span>
             </a>
