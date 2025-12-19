@@ -111,6 +111,9 @@ body,
   .desktop-menu {
     display: none;
   }
+  .website-logo{
+    max-width: 90%;
+  }
 
   .hamburger-btn {
     display: block;
