@@ -1,55 +1,81 @@
-/* ---------------- Global ---------------- */
-.website-logo {
-  width: 650px;
-  margin-left: 25px;
+/* ---------- GLOBAL RESET ---------- */
+* {
+  box-sizing: border-box;
 }
-.header-container{
-  background-color: #007bff;
-  padding: 10px 0;
-  text-align: left;
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
   width: 100%;
- 
 }
+
+/* ---------- TOP BAR ---------- */
+.header-container {
+  background-color: #007bff;
+  width: 100%;
+}
+
 .content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-
+  justify-content: space-between;
+  padding: 10px 20px;
 }
+
+.top-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+.college-code {
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ---------- NAVBAR ---------- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background: #ffff;
+  background: white;
   position: sticky;
-  width: 100%;
   top: 0;
   z-index: 1000;
 }
 
-/* ---------------- Desktop Menu ---------------- */
+.website-logo {
+  min-width: 50%;
+  max-width: 70%;
+}
+
+/* ---------- DESKTOP MENU ---------- */
 .desktop-menu {
   display: flex;
   gap: 30px;
-  align-items: center;
   list-style: none;
+  align-items: center;
 }
 
-.desktop-menu li a {
-  color: #0000;
+.desktop-menu a {
   text-decoration: none;
+  color: black;
 }
 
-.desktop-menu li a.active {
+.desktop-menu a.active {
   background: #007bff;
   padding: 8px 16px;
   border-radius: 4px;
-  color: white !important;
-  font-weight: 600;
+  color: white;
 }
 
+/* ---------- BUTTON ---------- */
 .logout-button {
   background: #ef4444;
   color: white;
@@ -59,93 +85,39 @@
   cursor: pointer;
 }
 
-/* ---------------- Hamburger (mobile only) ---------------- */
-.menu {
-  display: none;
-  position: absolute;
-  right: 1rem;
-  top: 0.8rem;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2rem;
-  height: 1.5rem;
+/* ---------- POPUP MENU ---------- */
+.hamburger-btn {
+  background: none;
+  border: none;
   cursor: pointer;
+  display: none;
 }
 
-.menu span {
-  width: 100%;
-  height: 3px;
-  background: white;
-  border-radius: 4px;
-}
-
-/* ---------------- Mobile Drawer ---------------- */
-.mobile-drawer {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 75%;
-  height: 100vh;
-  background: white;
-  padding: 20px;
+.popup-menu {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  list-style: none;
-  transition: 0.4s ease-in-out;
-  z-index: 9999;
+  gap: 15px;
+  padding: 20px;
 }
 
-.mobile-drawer.open {
-  left: 0;
-}
-
-.mobile-drawer a {
-  font-size: 20px;
+.popup-menu a {
   text-decoration: none;
   color: black;
-}
-
-.mobile-drawer a.active {
-  color: #e19b0f;
-  font-weight: 700;
-}
-
-.close-btn {
-  align-self: flex-end;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.mobile-drawer .logout-button {
-  background: none;
-  color: red;
   font-size: 18px;
-  padding: 0;
-  text-align: left;
 }
 
-/* ---------------- Mobile Overrides ---------------- */
+/* ---------- MOBILE ---------- */
 @media (max-width: 780px) {
   .desktop-menu {
     display: none;
   }
 
-  .menu {
-    display: flex;
-    margin-top: 12px;
+  .hamburger-btn {
+    display: block;
   }
-  .website-logo {
-  width: 90%;
-}
-span {
-  display: none;
-  font-size: 18px;
-}
-.content {
-  justify-content: center;
-  gap: 20px;
-}
+
+  .phone-text,
+  .whatsapp-text {
+    display: none;
+  }
 }
