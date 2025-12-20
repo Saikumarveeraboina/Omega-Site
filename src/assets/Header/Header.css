@@ -62,6 +62,12 @@ body,
   list-style: none;
   align-items: center;
 }
+.popup-container {
+  display: none;
+  
+ 
+ 
+}
 
 .desktop-menu a {
   text-decoration: none;
@@ -98,12 +104,15 @@ body,
   flex-direction: column;
   gap: 15px;
   padding: 20px;
+    background-color: #ffff;
+  height: auto;
 }
 
 .popup-menu a {
   text-decoration: none;
   color: black;
   font-size: 18px;
+
 }
 
 /* ---------- MOBILE ---------- */
@@ -122,5 +131,10 @@ body,
   .phone-text,
   .whatsapp-text {
     display: none;
+  }
+  .popup-container {
+    display: block;
+    
+
   }
 }

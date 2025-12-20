@@ -1,31 +1,16 @@
 import React from 'react'
 
 import './index.css'
-import products from '../../Images/products.jpg'
+
 
 const Products = () => {
     return (
         <>
           
             <div className='products-container'>
-                <h1 className='products-title'>Products Page</h1>
-                <p className='products-subtitle'>Explore our exclusive range of fashion products!</p>
+                <h1 className='products-title'>Semester Syllabus</h1>
+                <p className='products-subtitle'>We Update soon</p>
 
-                <img src={products}
-                    alt="products"
-                    className='product-img' />
-
-                <img src={products}
-                    alt="products"
-                    className='product-img' />
-
-                <img src={products}
-                    alt="products"
-                    className='product-img' />
-
-                <img src={products}
-                    alt="products"
-                    className='product-img' />
             </div>
 
         </>

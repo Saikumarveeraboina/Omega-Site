@@ -6,21 +6,19 @@ import Products from './assets/Products/index'
 import About from './assets/About/index'
 import Contact from './assets/Contact/index'
 import Header from './assets/Header/Header'
-import Slider from './assets/Slider/index'
+
 
 const App = () => {
   return (
     <div className="app-layout">
       <Header />
-      <Slider />
-
       <main className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/materials" element={<Cart />} />
+          <Route path="/syllabus" element={<Products />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/contact-us" element={<Contact />} />
         </Routes>
       </main>
 

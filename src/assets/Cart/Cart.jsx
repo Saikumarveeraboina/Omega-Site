@@ -1,6 +1,5 @@
 import React from 'react'
 
-import cart from '../../Images/cart.jpg'
 import './Cart.css'
 
 const Cart = () => {
@@ -8,10 +7,9 @@ const Cart = () => {
     <div className='cart-page'>
      
         <div className='cart-container'>
-        <h1>Cart Page</h1>
-        <img src={cart} alt="cart" className='cart' />
-        <img src={cart} alt="cart" className='cart' />
-        <img src={cart} alt="cart" className='cart' />
+        <h1>Materials Page</h1>
+        <p>Materials will be updated soon.</p>
+     
         </div>
 
     </div>

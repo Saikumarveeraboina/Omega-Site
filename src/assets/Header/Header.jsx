@@ -48,34 +48,36 @@ const Header = () => {
         </Link>
 
         {/* ---------- MOBILE HAMBURGER (POPUP) ---------- */}
+        <div className="popup-container">
         <Popup
           trigger={
             <button className="hamburger-btn">
               <GiHamburgerMenu size={22} />
             </button>
           }
-          position="right top"
+          position="left top"
           closeOnDocumentClick
         >
           {close => (
             <div className="popup-menu">
               <NavLink to="/" onClick={close}>Home</NavLink>
-              <NavLink to="/products" onClick={close}>Products</NavLink>
-              <NavLink to="/cart" onClick={close}>Cart</NavLink>
-              <NavLink to="/about" onClick={close}>About</NavLink>
-              <NavLink to="/contact" onClick={close}>Contact</NavLink>
+              <NavLink to="/syllabus" onClick={close}>Syllabus</NavLink>
+              <NavLink to="/materials" onClick={close}>Materials</NavLink>
+              <NavLink to="/about-us" onClick={close}>About</NavLink>
+              <NavLink to="/contact-us" onClick={close}>Contact</NavLink>
               <button className="logout-button">Login</button>
             </div>
           )}
         </Popup>
+        </div>
 
         {/* ---------- DESKTOP MENU ---------- */}
         <ul className="desktop-menu">
           <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/products">Products</NavLink></li>
-          <li><NavLink to="/cart">Cart</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-          <li><NavLink to="/contact">Contact</NavLink></li>
+          <li><NavLink to="/syllabus">Syllabus</NavLink></li>
+          <li><NavLink to="/materials">Materials</NavLink></li>
+          <li><NavLink to="/about-us">About</NavLink></li>
+          <li><NavLink to="/contact-us">Contact</NavLink></li>
           <button className="logout-button">Login</button>
         </ul>
       </nav>
