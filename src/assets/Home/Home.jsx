@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import screen1 from "../../Images/screen1.jpg"
 import screen2 from "../../Images/screen2.jpg"
 import screen3 from "../../Images/screen3.jpg"
+import screen4 from "../../Images/screen4.jpg"
+import screen5 from "../../Images/screen5.jpg"
 
 
 import './Home.css'
@@ -18,10 +20,10 @@ const Home = () => {
         <section className="carousel-section">
           <Slider
             autoplay={true}
-            autoplaySpeed={3000}
+            autoplaySpeed={2000}
             infinite={true}
             arrows={true}
-            dots={true}
+            dots={false}
             speed={600}
           >
             <div>
@@ -37,6 +39,14 @@ const Home = () => {
             <div>
               <img src={screen3}
                 alt="Slide 3" className="carousel-img" />
+            </div>
+            <div>
+              <img src={screen4}
+                alt="Slide 4" className="carousel-img" />
+            </div>
+            <div>
+              <img src={screen5}
+                alt="Slide 5" className="carousel-img" />
             </div>
           </Slider>
         </section>
