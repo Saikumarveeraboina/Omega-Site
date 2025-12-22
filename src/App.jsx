@@ -4,7 +4,6 @@ import Header from "./assets/Header";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Loader from "./assets/Spinner";
 
-// Lazy loaded pages
 const Home = lazy(() => import("./assets/Home"));
 const Materials = lazy(() => import("./assets/Materials"));
 const Syllabus = lazy(() => import("./assets/Syllabus"));
@@ -20,11 +19,10 @@ const App = () => {
     <div className="app-layout">
       <Header />
 
-      {/* Suspense wrapper */}
       <Suspense fallback={<Loader />}>
         <main className="page-content">
           <Routes>
-            {/* Public routes */}
+            {/* Public */}
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/contact-us" element={<Contact />} />
@@ -32,7 +30,7 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/reset-pass" element={<ResetPassword />} />
 
-            {/* Protected routes */}
+            {/* Protected */}
             <Route
               path="/materials"
               element={
