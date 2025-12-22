@@ -8,18 +8,16 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState("");
+  const [loading, setLoading] = useState(true); // ✅ ADD THIS
 
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
 
       if (currentUser) {
-        // 🔹 Google login → displayName
         if (currentUser.displayName) {
           setUsername(currentUser.displayName);
-        } 
-        // 🔹 Email login → Firestore username
-        else {
+        } else {
           const ref = doc(db, "users", currentUser.uid);
           const snap = await getDoc(ref);
           setUsername(snap.exists() ? snap.data().username : "");
@@ -27,6 +25,8 @@ export const AuthProvider = ({ children }) => {
       } else {
         setUsername("");
       }
+
+      setLoading(false); // ✅ IMPORTANT
     });
 
     return () => unsub();
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, username, logout }}>
+    <AuthContext.Provider value={{ user, username, loading, logout }}>
       {children}
     </AuthContext.Provider>
   );
