@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './Cart.css'
+import './index.css'
 
-const Cart = () => {
+const Materials = () => {
   return (
     <div className='cart-page'>
      
@@ -16,4 +16,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Materials

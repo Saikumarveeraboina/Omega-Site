@@ -3,7 +3,7 @@ import React from 'react'
 import './index.css'
 
 
-const Products = () => {
+const Syllabus = () => {
     return (
         <>
           
@@ -18,4 +18,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default Syllabus

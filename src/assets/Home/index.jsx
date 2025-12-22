@@ -2,14 +2,7 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import screen1 from "../../Images/screen1.jpg"
-import screen2 from "../../Images/screen2.jpg"
-import screen3 from "../../Images/screen3.jpg"
-import screen4 from "../../Images/screen4.jpg"
-import screen5 from "../../Images/screen5.jpg"
-
-import './Home.css'
-
+import './index.css'
 
 const Home = () => {
   return (
@@ -26,25 +19,25 @@ const Home = () => {
             speed={600}
           >
             <div>
-              <img src={screen1}
+              <img src="/Images/screen2.jpg"
                 alt="Slide 1" className="carousel-img" />
             </div>
 
             <div>
-              <img src={screen2}
+              <img src="/Images/screen1.jpg"
                 alt="Slide 2" className="carousel-img" />
             </div>
 
             <div>
-              <img src={screen3}
+              <img src="/Images/screen3.jpg"
                 alt="Slide 3" className="carousel-img" />
             </div>
             <div>
-              <img src={screen4}
+              <img src="/Images/screen4.jpg"
                 alt="Slide 4" className="carousel-img" />
             </div>
             <div>
-              <img src={screen5}
+              <img src="/Images/screen5.jpg"
                 alt="Slide 5" className="carousel-img" />
             </div>
           </Slider>

@@ -1,0 +1,114 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background image */
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.85),
+      rgba(15, 23, 42, 0.85)
+    ),
+    url("/Images/Bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width:768px) {
+    .auth-container {
+        background-image:
+        linear-gradient(
+          rgba(15, 23, 42, 0.85),
+          rgba(15, 23, 42, 0.85)
+        ),
+        url("/Images/Bg.jpg"); 
+        background-size: cover;
+        background-position: center;
+    }
+
+}
+.auth-card {
+  width: 350px;
+  padding: 30px;
+  background: #ffff;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(59,130,246,0.4);
+  animation: slideUp 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.auth-card input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #cf0e3b; /* border */
+  border-radius: 8px;
+  background-color: #11ddd3;
+  color: #000;
+  font-size: 14px;
+  outline: none;
+}
+
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.auth-card h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 2px;
+  outline: #000;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 10px;
+  background: #de0707;
+  color: #ffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.login{
+    width: 150px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.google-btn {
+  margin-top: 10px;
+  background: #09d264;
+  color: #000;
+}
+.para{
+    font-size: 16px;
+    font-family: roboto;
+    margin-top: 10px;
+
+}
+text {
+    text-decoration: none;
+    color: #0d23c8;
+}
+.link {
+  color: #60a5fa;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+}
+.link:hover {
+  text-decoration: underline;
+}

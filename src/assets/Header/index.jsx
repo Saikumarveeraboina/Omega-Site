@@ -1,11 +1,10 @@
 import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import Popup from 'reactjs-popup'
-import logo from '../../Images/OMSIT.png'
 import {FaPhoneAlt} from 'react-icons/fa'
 import {RiWhatsappFill} from 'react-icons/ri'
 import {GiHamburgerMenu} from 'react-icons/gi'
-import './Header.css'
+import './index.css'
 
 const Header = () => {
   const phoneNumber = '919246805933'
@@ -44,7 +43,7 @@ const Header = () => {
       {/* ---------- NAVBAR ---------- */}
       <nav className="navbar">
         <Link to="/">
-          <img src={logo} alt="logo" className="website-logo" />
+          <img src="/Images/OMSIT.png" alt="logo" className="website-logo" />
         </Link>
 
         {/* ---------- MOBILE HAMBURGER (POPUP) ---------- */}
@@ -65,7 +64,9 @@ const Header = () => {
               <NavLink to="/materials" onClick={close}>Materials</NavLink>
               <NavLink to="/about-us" onClick={close}>About</NavLink>
               <NavLink to="/contact-us" onClick={close}>Contact</NavLink>
-              <button className="logout-button">Login</button>
+              <Link to="/login" onClick={close}>
+                <button className="logout-button">Login</button>
+              </Link>
             </div>
           )}
         </Popup>
@@ -78,7 +79,9 @@ const Header = () => {
           <li><NavLink to="/materials">Materials</NavLink></li>
           <li><NavLink to="/about-us">About</NavLink></li>
           <li><NavLink to="/contact-us">Contact</NavLink></li>
-          <button className="logout-button">Login</button>
+          <Link to="/login">
+            <button className="logout-button">Login</button>
+          </Link>
         </ul>
       </nav>
     </>
