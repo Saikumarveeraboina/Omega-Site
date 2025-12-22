@@ -69,3 +69,22 @@
     margin-top: 20px;
   }
 }
+
+.note-btn {
+  padding: 10px 16px;
+  background: #facc15;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.note-popup {
+  padding: 12px 16px;
+  background: #03e68b;
+  color: #000;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}

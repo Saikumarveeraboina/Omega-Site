@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+import { useAuth } from "../../routes/Auth/AuthContext";
 import './index.css'
 
 const Home = () => {
+   const { user } = useAuth();
   return (
     <>
       <div className="home-container">
@@ -42,11 +46,23 @@ const Home = () => {
             </div>
           </Slider>
         </section>
-        {/* CALL TO ACTION SECTION */}
-        <section className="cta-section">
-          <h2 className="cta-heading">Discover More Features</h2>
-          <Link to="/features" className="cta-button">Explore Features</Link>
-        </section>
+        <div className="home-content">
+      <h4 style={{fontSize: "22px", fontFamily: "roboto"}}>OMEGA PG COLLEGE - MCA (2174)</h4>
+      <p>Edulabad (v), Ghatkesar , Hyderabad</p>
+
+      {/* NOTE BUTTON */}
+      {!user && (
+        <Popup
+          trigger={<button className="note-btn">Note</button>}
+          position="top right"
+          closeOnDocumentClick
+        >
+          <div className="note-popup">
+          Dear Student, Please Login to access all features
+          </div>
+        </Popup>
+      )}
+    </div>
       </div>
     </>
 
