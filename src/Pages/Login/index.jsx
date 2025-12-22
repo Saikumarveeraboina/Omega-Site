@@ -1,5 +1,6 @@
 import {
   signInWithEmailAndPassword,
+  signInWithPopup,
   signInWithRedirect,
 } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
@@ -9,6 +10,7 @@ import "./index.css";
 const Login = () => {
   const navigate = useNavigate();
 
+  // 🔹 Email + Password Login
   const handleLogin = async (e) => {
     e.preventDefault();
     const { email, password } = e.target.elements;
@@ -26,11 +28,21 @@ const Login = () => {
     }
   };
 
-  // 🔥 MOBILE SAFE GOOGLE LOGIN
+  // 🔹 Google Login (Desktop → Popup | Mobile → Redirect)
   const googleLogin = async () => {
     try {
-      await signInWithRedirect(auth, googleProvider);
-      // ❌ DO NOT navigate manually
+      const isMobile =
+        /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // 📱 Mobile safe
+        await signInWithRedirect(auth, googleProvider);
+      } else {
+        // 🖥 Desktop safe
+        await signInWithPopup(auth, googleProvider);
+        alert("Google Login Success 🚀");
+        navigate("/");
+      }
     } catch (err) {
       alert(err.message);
     }
@@ -43,7 +55,13 @@ const Login = () => {
 
         <img src="/logo.png" alt="Login" className="login" />
 
-        <input name="email" placeholder="Email" required />
+        <input
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+        />
+
         <input
           name="password"
           type="password"

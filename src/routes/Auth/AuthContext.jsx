@@ -16,7 +16,10 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     // 🔥 Handle Google redirect result (mobile)
-    getRedirectResult(auth).catch(() => {});
+    getRedirectResult(auth).catch((err) => {
+      console.log("Redirect result handled");
+    });
+
 
     const unsub = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
