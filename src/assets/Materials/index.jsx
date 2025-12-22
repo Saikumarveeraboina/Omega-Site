@@ -1,19 +1,66 @@
-import React from 'react'
+import "./index.css";
 
-import './index.css'
+const materialsData = {
+  "Semester 1": [
+    {
+      title: "All units (1-5)",
+      type: "Notes",
+      url: "https://drive.google.com/drive/folders/1-D89Flt6eCL4zvY6832G5Vi3NVzIgcBI",
+    },
+  ],
+  "Semester 2": [
+    {
+      title: "All Units (1-5)",
+      type: "Notes",
+      url: "https://drive.google.com/drive/folders/1NXpcN8eMeii6pGIY4xZu4mb4yoTwyQMM",
+    },
+  ],
+  "Semester 3": [
+    {
+      title: "Update soon",
+      type: "",
+      url: "https://drive.google.com/drive/folders/1NXpcN8eMeii6pGIY4xZu4mb4yoTwyQMM",
+    },
+  ],
+  "Semester 4": [
+    {
+      title: "Update soon",
+      type: "",
+      url: "https://drive.google.com/drive/folders/1NXpcN8eMeii6pGIY4xZu4mb4yoTwyQMM",
+    },
+  ],
+};
 
 const Materials = () => {
   return (
-    <div className='cart-page'>
-     
-        <div className='cart-container'>
-        <h1>Materials Page</h1>
-        <p>Materials will be updated soon.</p>
-     
-        </div>
+    <div className="materials-container">
+      <h1 style={{fontFamily: "roboto", fontSize:"22px"}}>Study Materials</h1>
 
+      {Object.entries(materialsData).map(
+        ([semester, materials]) => (
+          <div key={semester} className="semester">
+            <h2 style={{fontFamily: "roboto", fontSize:"18px"}}>{semester}</h2>
+
+            {materials.map((item, index) => (
+              <div key={index} className="material-card">
+                <p style={{fontFamily: "roboto", fontSize:"18px"}}>
+                  {item.title} – {item.type}
+                </p>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="open-btn"
+                >
+                  Open
+                </a>
+              </div>
+            ))}
+          </div>
+        )
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Materials
+export default Materials;

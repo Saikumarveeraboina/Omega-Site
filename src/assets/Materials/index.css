@@ -1,21 +1,25 @@
-.cart-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.cart-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.cart {
+.materials-container {
   padding: 20px;
-  height: 400px;
-  width: 400px;
 }
 
+.semester {
+  margin-bottom: 20px;
+}
+
+.material-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #f1f5f9;
+  border-radius: 6px;
+}
+
+.open-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+}
