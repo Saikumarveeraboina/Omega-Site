@@ -6,6 +6,7 @@ import Popup from 'reactjs-popup'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { RiWhatsappFill } from 'react-icons/ri'
 import { GiHamburgerMenu } from 'react-icons/gi'
+
 import './index.css'
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
   )}`
 
   // ✅ AUTH
-  const { user, logout } = useAuth()
+  const { user, logout, username } = useAuth()
   const navigate = useNavigate()
 
   const handleLogout = async () => {
@@ -50,6 +51,9 @@ const Header = () => {
             <span className="whatsapp-text">WhatsApp</span>
           </a>
         </div>
+        <div className="user-section">
+          {user && <p className="welcome-text">Hello {username} , Welcome to Our Website 👋</p>}
+        </div>
       </div>
 
       {/* ---------- NAVBAR ---------- */}
@@ -74,8 +78,8 @@ const Header = () => {
                 <NavLink to="/" onClick={close}>Home</NavLink>
                 <NavLink to="/about-us" onClick={close}>About</NavLink>
                 <NavLink to="/contact-us" onClick={close}>Contact</NavLink>
-                <li style={{listStyle: "none"}}>
-                  <a style={{listStyleType: "none"}}
+                <li style={{ listStyle: "none" }}>
+                  <a style={{ listStyleType: "none" }}
                     href="https://omegapgcollegemca.ac.in/faculty-list-2174-MCA.pdf"
                     target="_blank"
                     rel="noopener noreferrer"

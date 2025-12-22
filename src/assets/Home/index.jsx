@@ -58,7 +58,11 @@ const Home = () => {
           closeOnDocumentClick
         >
           <div className="note-popup">
-          Dear Student, Please Login to access all features
+          Dear Student, Please Login to access all features 
+          (Mobile Users Login with Email & Password , Dont Use google signup) 
+            <br/>
+            <br/>
+                       @Omega
           </div>
         </Popup>
       )}

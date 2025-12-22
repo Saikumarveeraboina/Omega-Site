@@ -1,19 +1,34 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../Pages/firebase";
-
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "../../Pages/firebase";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (currentUser) => {
+    const unsub = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
-      setLoading(false);
+
+      if (currentUser) {
+        // 🔹 Google login → displayName
+        if (currentUser.displayName) {
+          setUsername(currentUser.displayName);
+        } 
+        // 🔹 Email login → Firestore username
+        else {
+          const ref = doc(db, "users", currentUser.uid);
+          const snap = await getDoc(ref);
+          setUsername(snap.exists() ? snap.data().username : "");
+        }
+      } else {
+        setUsername("");
+      }
     });
+
     return () => unsub();
   }, []);
 
@@ -22,8 +37,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, logout }}>
-      {!loading && children}
+    <AuthContext.Provider value={{ user, username, logout }}>
+      {children}
     </AuthContext.Provider>
   );
 };
