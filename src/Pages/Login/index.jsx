@@ -3,12 +3,33 @@ import {
   signInWithPopup,
   signInWithRedirect,
 } from "firebase/auth";
-import { auth, googleProvider } from "../firebase";
+import {
+  doc,
+  getDoc,
+  setDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { auth, googleProvider, db } from "../firebase";
 import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  // 🔹 Create Firestore user if not exists
+  const createUserIfNotExists = async (user) => {
+    const ref = doc(db, "users", user.uid);
+    const snap = await getDoc(ref);
+
+    if (!snap.exists()) {
+      await setDoc(ref, {
+        username: user.displayName || "Student",
+        email: user.email,
+        role: "student", // 👈 DEFAULT ROLE
+        createdAt: serverTimestamp(),
+      });
+    }
+  };
 
   // 🔹 Email + Password Login
   const handleLogin = async (e) => {
@@ -16,11 +37,14 @@ const Login = () => {
     const { email, password } = e.target.elements;
 
     try {
-      await signInWithEmailAndPassword(
+      const userCred = await signInWithEmailAndPassword(
         auth,
         email.value,
         password.value
       );
+
+      await createUserIfNotExists(userCred.user);
+
       alert("Login Success ✅");
       navigate("/");
     } catch (err) {
@@ -39,7 +63,13 @@ const Login = () => {
         await signInWithRedirect(auth, googleProvider);
       } else {
         // 🖥 Desktop safe
-        await signInWithPopup(auth, googleProvider);
+        const result = await signInWithPopup(
+          auth,
+          googleProvider
+        );
+
+        await createUserIfNotExists(result.user);
+
         alert("Google Login Success 🚀");
         navigate("/");
       }

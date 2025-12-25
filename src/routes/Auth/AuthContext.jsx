@@ -11,28 +11,38 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [userData, setUserData] = useState(null); // 👈 FULL USER DATA
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 🔥 Handle Google redirect result (mobile)
-    getRedirectResult(auth).catch((err) => {
-      console.log("Redirect result handled");
+    // 🔹 Handle Google redirect result (mobile)
+    getRedirectResult(auth).catch(() => {
+      // no issue if no redirect happened
     });
-
 
     const unsub = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
 
       if (currentUser) {
-        if (currentUser.displayName) {
-          setUsername(currentUser.displayName);
-        } else {
-          const ref = doc(db, "users", currentUser.uid);
-          const snap = await getDoc(ref);
-          setUsername(snap.exists() ? snap.data().username : "");
+        const ref = doc(db, "users", currentUser.uid);
+        const snap = await getDoc(ref);
+
+        if (snap.exists()) {
+          const data = snap.data();
+          console.log("AUTH CONTEXT LOADED", {
+            role: data.role,
+            file: "AuthContext.jsx",
+          });
+          setUserData(data);
+          setUsername(data.username);
+        }
+        else {
+          setUserData(null);
+          setUsername(currentUser.displayName || "");
         }
       } else {
+        setUserData(null);
         setUsername("");
       }
 
@@ -48,7 +58,13 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, username, logout, loading }}
+      value={{
+        user,
+        userData,   // 👈 contains role
+        username,
+        logout,
+        loading,
+      }}
     >
       {children}
     </AuthContext.Provider>

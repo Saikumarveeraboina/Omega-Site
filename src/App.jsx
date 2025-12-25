@@ -1,18 +1,28 @@
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+
 import Header from "./assets/Header";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import AdminRoute from "./Pages/AdminRoute";
 import Loader from "./assets/Spinner";
 
+// 🔹 Lazy loaded public pages
 const Home = lazy(() => import("./assets/Home"));
-const Materials = lazy(() => import("./assets/Materials"));
-const Syllabus = lazy(() => import("./assets/Syllabus"));
 const About = lazy(() => import("./assets/About"));
 const Contact = lazy(() => import("./assets/Contact"));
 
+// 🔹 Lazy loaded student pages
+const Materials = lazy(() => import("./assets/Materials"));
+const Syllabus = lazy(() => import("./assets/Syllabus"));
+const Notices = lazy(() => import("./Pages/Notices"));
+
+// 🔹 Auth pages
 const Login = lazy(() => import("./Pages/Login"));
 const Register = lazy(() => import("./Pages/Register"));
 const ResetPassword = lazy(() => import("./Pages/ResetPass"));
+
+// 🔹 Admin pages
+const AdminNotice = lazy(() => import("./Pages/AdminNotice"));
 
 const App = () => {
   return (
@@ -22,7 +32,7 @@ const App = () => {
       <Suspense fallback={<Loader />}>
         <main className="page-content">
           <Routes>
-            {/* Public */}
+            {/* ================= PUBLIC ROUTES ================= */}
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/contact-us" element={<Contact />} />
@@ -30,7 +40,7 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/reset-pass" element={<ResetPassword />} />
 
-            {/* Protected */}
+            {/* ================= STUDENT PROTECTED ROUTES ================= */}
             <Route
               path="/materials"
               element={
@@ -39,12 +49,32 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/syllabus"
               element={
                 <ProtectedRoute>
                   <Syllabus />
                 </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/notices"
+              element={
+                <ProtectedRoute>
+                  <Notices />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* ================= ADMIN PROTECTED ROUTES ================= */}
+            <Route
+              path="/admin/notices"
+              element={
+                <AdminRoute>
+                  <AdminNotice />
+                </AdminRoute>
               }
             />
           </Routes>

@@ -4,9 +4,9 @@ import App from "./App";
 import { AuthProvider } from "./routes/Auth/AuthContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <AuthProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <AuthProvider>
       <App />
-    </BrowserRouter>
-  </AuthProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );

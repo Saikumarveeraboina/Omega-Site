@@ -94,6 +94,7 @@ const Header = () => {
                   <>
                     <NavLink to="/syllabus" onClick={close}>Syllabus</NavLink>
                     <NavLink to="/materials" onClick={close}>Materials</NavLink>
+                    <NavLink to="/notices" onClick={close}>Notices</NavLink>
                   </>
                 )}
 
@@ -139,6 +140,7 @@ const Header = () => {
             <>
               <li><NavLink to="/syllabus">Syllabus</NavLink></li>
               <li><NavLink to="/materials">Materials</NavLink></li>
+              <li><NavLink to="/notices">Notices</NavLink></li>
             </>
           )}
 

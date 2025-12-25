@@ -51,17 +51,41 @@ body {
 .note-btn {
   margin-top: 16px;
   padding: 10px 20px;
-  background: linear-gradient(135deg, #facc15, #fde047);
   color: #000;
+  background-color: transparent;
   border: none;
   border-radius: 8px;
   font-size: 20px;
   cursor: pointer;
-  width: 80%;
   font-weight: 600;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.blink-text {
+  font-weight: bold;
+  cursor: pointer;
+  animation: multiColorBlink 1s infinite;
+}
+@keyframes multiColorBlink {
+  0% {
+    color: red;
+  }
+  20% {
+    color: orange;
+  }
+  40% {
+   color: yellow;
+  }
+  60% {
+    color: green;
+  }
+  80% {
+    color: blue;
+  }
+  100% {
+    color: purple;
+  }
+}
 .note-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);

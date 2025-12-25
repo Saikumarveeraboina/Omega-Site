@@ -50,7 +50,7 @@ const Home = () => {
           {/* NOTE POPUP */}
           {!user && (
             <Popup
-              trigger={<button className="note-btn">Note</button>}
+              trigger={<button className="note-btn blink-text"> 👉 Click Here</button>}
               position="top right"
               closeOnDocumentClick
             >
