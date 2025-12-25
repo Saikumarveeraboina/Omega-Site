@@ -20,7 +20,7 @@ const Notices = lazy(() => import("./Pages/Notices"));
 const Login = lazy(() => import("./Pages/Login"));
 const Register = lazy(() => import("./Pages/Register"));
 const ResetPassword = lazy(() => import("./Pages/ResetPass"));
-const VideoPopup = lazy(() => import("./Pages/VideoPopup"));
+
 
 // 🔹 Admin pages
 const AdminNotice = lazy(() => import("./Pages/AdminNotice"));
@@ -28,7 +28,7 @@ const AdminNotice = lazy(() => import("./Pages/AdminNotice"));
 const App = () => {
   return (
     <div className="app-layout">
-      <VideoPopup />
+
       <Header />
 
       <Suspense fallback={<Loader />}>
