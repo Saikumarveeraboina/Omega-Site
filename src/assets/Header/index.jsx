@@ -52,7 +52,7 @@ const Header = () => {
           </a>
         </div>
         <div className="user-section">
-          {user && <p className="welcome-text">Hello {username} , Welcome to Our Website 👋</p>}
+          {user && <p className="welcome-text">Hello {username} , Welcome Student Portal 👋</p>}
         </div>
       </div>
 
