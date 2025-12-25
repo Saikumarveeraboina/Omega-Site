@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { db } from "./firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import './file.css'
+import "./file.css";
 
 const AdminNotice = () => {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
+  const [link, setLink] = useState(""); // ✅ ADD THIS
 
   const publishNotice = async () => {
     if (!title || !message) {
@@ -13,16 +14,22 @@ const AdminNotice = () => {
       return;
     }
 
-    await addDoc(collection(db, "notices"), {
-      title,
-      message,
-      link: link || "",
-      createdAt: Timestamp.now(),
-    });
+    try {
+      await addDoc(collection(db, "notices"), {
+        title,
+        message,
+        link, // ✅ NOW VALID
+        createdAt: Timestamp.now(),
+      });
 
-    setTitle("");
-    setMessage("");
-    alert("Notice Published");
+      setTitle("");
+      setMessage("");
+      setLink("");
+      alert("Notice Published");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to publish notice");
+    }
   };
 
   return (
@@ -40,10 +47,20 @@ const AdminNotice = () => {
         placeholder="Notice Message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-         className="input-el"
+        className="input-el"
       />
 
-      <button onClick={publishNotice} className="btn">Publish</button>
+      {/* 🔗 NEW LINK INPUT */}
+      <input
+        placeholder="Optional Link (Google Drive / Website)"
+        value={link}
+        onChange={(e) => setLink(e.target.value)}
+        className="input-el"
+      />
+
+      <button onClick={publishNotice} className="btn">
+        Publish
+      </button>
     </div>
   );
 };

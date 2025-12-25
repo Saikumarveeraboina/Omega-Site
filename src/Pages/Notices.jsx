@@ -65,6 +65,7 @@ const Notices = () => {
               Open Link
             </a>
           )}
+          <br/>
 
 
           <small className="notice-date">
