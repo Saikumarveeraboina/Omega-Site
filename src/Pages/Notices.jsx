@@ -56,12 +56,22 @@ const Notices = () => {
         <div key={n.id} className="notice-card">
           <h3>{n.title}</h3>
           <p>{n.message}</p>
+          {n.link && (
+            <a
+              href={n.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Link
+            </a>
+          )}
+
 
           <small className="notice-date">
             {n.createdAt?.seconds
               ? new Date(
-                  n.createdAt.seconds * 1000
-                ).toDateString()
+                n.createdAt.seconds * 1000
+              ).toDateString()
               : ""}
           </small>
 

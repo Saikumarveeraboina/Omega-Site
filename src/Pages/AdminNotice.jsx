@@ -16,6 +16,7 @@ const AdminNotice = () => {
     await addDoc(collection(db, "notices"), {
       title,
       message,
+      link: link || "",
       createdAt: Timestamp.now(),
     });
 
