@@ -1,6 +1,82 @@
-.notices-container{
+.notices-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+.admin-notice{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.notices-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.input-el{
+    background-color: #d27777;
+    border: 5px dotted #0000 ;
+    border-radius: 10px;
+    font-size: 26px;
+    font-family: roboto;
+    margin-top: 15px;
+    padding: 15px;
+    width: 60%;
+    color: #000 ;
+    height: 200px;
+    font-weight: bold;
+}
+.btn {
+    width: 60%;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    background-color: aqua;
+    color: #000;
+    margin-top: 20px;
+    padding: 15px;
+    
+}
+.notice-card {
+  background: #ffffff;
+  border-left: 5px solid #2563eb;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.notice-card h3 {
+  margin: 0;
+  color: #1e3a8a;
+}
+
+.notice-card p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.notice-date {
+  font-size: 12px;
+  color: gray;
+}
+
+.delete-btn {
+  margin-top: 10px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+.empty-text {
+  text-align: center;
+  color: gray;
 }
