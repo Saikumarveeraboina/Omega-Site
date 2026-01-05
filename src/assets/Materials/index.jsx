@@ -19,14 +19,14 @@ const materialsData = {
     {
       title: "Update soon",
       type: "",
-      url: "https://drive.google.com/drive/folders/1NXpcN8eMeii6pGIY4xZu4mb4yoTwyQMM",
+      url: "https://ik.imagekit.io/gagrbw4f8/update.png",
     },
   ],
   "Semester 4": [
     {
       title: "Update soon",
       type: "",
-      url: "https://drive.google.com/drive/folders/1NXpcN8eMeii6pGIY4xZu4mb4yoTwyQMM",
+      url: "https://ik.imagekit.io/gagrbw4f8/update.png",
     },
   ],
 };

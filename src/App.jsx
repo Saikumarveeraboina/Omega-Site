@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
 import Header from "./assets/Header";
-import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminRoute from "./Pages/AdminRoute";
 import Loader from "./assets/Spinner";
 
@@ -38,37 +37,17 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/contact-us" element={<Contact />} />
+            <Route path="/materials" element={<Materials />} />
+            <Route path="/syllabus" element={<Syllabus />} />
+            <Route path="/notices" element={<Notices />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/reset-pass" element={<ResetPassword />} />
 
-            {/* ================= STUDENT PROTECTED ROUTES ================= */}
-            <Route
-              path="/materials"
-              element={
-                <ProtectedRoute>
-                  <Materials />
-                </ProtectedRoute>
-              }
-            />
 
-            <Route
-              path="/syllabus"
-              element={
-                <ProtectedRoute>
-                  <Syllabus />
-                </ProtectedRoute>
-              }
-            />
 
-            <Route
-              path="/notices"
-              element={
-                <ProtectedRoute>
-                  <Notices />
-                </ProtectedRoute>
-              }
-            />
+            
+           
 
             {/* ================= ADMIN PROTECTED ROUTES ================= */}
             <Route

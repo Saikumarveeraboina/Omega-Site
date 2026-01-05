@@ -78,6 +78,9 @@ const Header = () => {
                 <NavLink to="/" onClick={close}>Home</NavLink>
                 <NavLink to="/about-us" onClick={close}>About</NavLink>
                 <NavLink to="/contact-us" onClick={close}>Contact</NavLink>
+                <NavLink to="/syllabus" onClick={close}>Syllabus</NavLink>
+                <NavLink to="/materials" onClick={close}>Materials</NavLink>
+                <NavLink to="/notices" onClick={close}>Notices</NavLink>
                 <li style={{ listStyle: "none" }}>
                   <a style={{ listStyleType: "none" }}
                     href="https://omegapgcollegemca.ac.in/faculty-list-2174-MCA.pdf"
@@ -88,15 +91,6 @@ const Header = () => {
                   </a>
                 </li>
 
-
-                {/* 🔐 Show only after login */}
-                {user && (
-                  <>
-                    <NavLink to="/syllabus" onClick={close}>Syllabus</NavLink>
-                    <NavLink to="/materials" onClick={close}>Materials</NavLink>
-                    <NavLink to="/notices" onClick={close}>Notices</NavLink>
-                  </>
-                )}
 
                 {/* 🔓 Login / Logout */}
                 {!user ? (
@@ -124,6 +118,9 @@ const Header = () => {
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/about-us">About</NavLink></li>
           <li><NavLink to="/contact-us">Contact</NavLink></li>
+          <li><NavLink to="/syllabus">Syllabus</NavLink></li>
+          <li><NavLink to="/materials">Materials</NavLink></li>
+          <li><NavLink to="/notices">Notices</NavLink></li>
           <li>
             <a
               href="https://omegapgcollegemca.ac.in/faculty-list-2174-MCA.pdf"
@@ -135,14 +132,9 @@ const Header = () => {
           </li>
 
 
-          {/* 🔐 After login only */}
-          {user && (
-            <>
-              <li><NavLink to="/syllabus">Syllabus</NavLink></li>
-              <li><NavLink to="/materials">Materials</NavLink></li>
-              <li><NavLink to="/notices">Notices</NavLink></li>
-            </>
-          )}
+
+
+
 
           {!user ? (
             <Link to="/login">
