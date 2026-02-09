@@ -80,7 +80,7 @@ const Header = () => {
                 <NavLink to="/contact-us" onClick={close}>Contact</NavLink>
                 <NavLink to="/syllabus" onClick={close}>Syllabus</NavLink>
                 <NavLink to="/materials" onClick={close}>Materials</NavLink>
-                <NavLink to="/notices" onClick={close}>Notices</NavLink>
+                <NavLink to="/notices" onClick={close}>Jobs</NavLink>
                 <li style={{ listStyle: "none" }}>
                   <a style={{ listStyleType: "none" }}
                     href="https://omegapgcollegemca.ac.in/faculty-list-2174-MCA.pdf"
@@ -120,7 +120,7 @@ const Header = () => {
           <li><NavLink to="/contact-us">Contact</NavLink></li>
           <li><NavLink to="/syllabus">Syllabus</NavLink></li>
           <li><NavLink to="/materials">Materials</NavLink></li>
-          <li><NavLink to="/notices">Notices</NavLink></li>
+          <li><NavLink to="/notices">Jobs</NavLink></li>
           <li>
             <a
               href="https://omegapgcollegemca.ac.in/faculty-list-2174-MCA.pdf"

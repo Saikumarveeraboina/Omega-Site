@@ -46,10 +46,10 @@ const Notices = () => {
 
   return (
     <div className="notices-container">
-      <h2 className="notices-title">📢 Notices</h2>
+      <h2 className="notices-title">📢 Job Updates</h2>
 
       {notices.length === 0 && (
-        <p className="empty-text">No notices available</p>
+        <p className="empty-text">No job updates without Login  , Please Login to see Drive links</p>
       )}
 
       {notices.map((n) => (
