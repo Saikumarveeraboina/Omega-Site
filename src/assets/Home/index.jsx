@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { useAuth } from "../../routes/Auth/AuthContext";
@@ -14,40 +11,34 @@ const Home = () => {
     <>
       <div className="home-container">
 
-        {/* ===== CAROUSEL SECTION ===== */}
+        {/* ===== RESPONSIVE BANNER SECTION ===== */}
         <section className="carousel-section fade-in">
-          <Slider
-            autoplay
-            autoplaySpeed={2000}
-            infinite
-            arrows
-            dots={false}
-            speed={600}
-          >
-            {["screen2", "screen1", "screen3", "screen4", "screen5"].map(
-              (img, i) => (
-                <div key={i}>
-                  <img
-                    src={`/Images/${img}.jpg`}
-                    alt={`Slide ${i + 1}`}
-                    className="carousel-img"
-                  />
-                </div>
-              )
-            )}
-          </Slider>
+          <picture>
+            {/* Mobile Image */}
+            <source
+              media="(max-width: 768px)"
+              srcSet="/Images/screen1.png"
+            />
+
+            {/* Desktop Image */}
+            <img
+              src="/Images/desktop.png"
+              alt="Banner"
+              className="carousel-img"
+            />
+          </picture>
         </section>
+
 
         {/* ===== COLLEGE INFO ===== */}
         <div className="home-content slide-up">
           <h2 className="college-title">
-            OMEGA PG COLLEGE – MCA (2174)
+            STUDENTS PORTAL
           </h2>
           <p className="college-address">
-            Edulabad (V), Ghatkesar, Hyderabad
+            Devoloped for MCA students of Omega PG College, this portal centralizes syllabus, materials, updates, and tools in one secure platform.
           </p>
 
-          {/* NOTE POPUP */}
           {!user && (
             <Popup
               trigger={<button className="note-btn blink-text"> 👉 Click Here</button>}
@@ -117,7 +108,6 @@ const Home = () => {
           </div>
         </section>
 
-        {/* ===== CTA ===== */}
         {!user && (
           <div className="cta-section slide-up">
             <h3>Get Started</h3>
