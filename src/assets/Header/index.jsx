@@ -34,12 +34,12 @@ const Header = () => {
       {/* ---------- TOP BLUE BAR ---------- */}
       <div className="header-container">
         <div className="content">
-          <a href="tel:+919246805933" className="top-link">
+          <a href="tel:+917780601401" className="top-link">
             <FaPhoneAlt size={16} />
-            <span className="phone-text">+91 9246805933 </span>
+            <span className="phone-text">+91 7780601401 </span>
           </a>
 
-          <p className="college-code">College Code : 2174</p>
+          <p className="college-code">Student Information Portal</p>
 
           <a
             href={whatsappUrl}
@@ -76,20 +76,12 @@ const Header = () => {
             {close => (
               <div className="popup-menu">
                 <NavLink to="/" onClick={close}>Home</NavLink>
-                <NavLink to="/about-us" onClick={close}>About</NavLink>
+
                 <NavLink to="/contact-us" onClick={close}>Contact</NavLink>
                 <NavLink to="/syllabus" onClick={close}>Syllabus</NavLink>
                 <NavLink to="/materials" onClick={close}>Materials</NavLink>
                 <NavLink to="/notices" onClick={close}>Jobs</NavLink>
-                <li style={{ listStyle: "none" }}>
-                  <a style={{ listStyleType: "none" }}
-                    href="https://omegapgcollegemca.ac.in/faculty-list-2174-MCA.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Faculty
-                  </a>
-                </li>
+
 
 
                 {/* 🔓 Login / Logout */}
@@ -116,26 +108,11 @@ const Header = () => {
         {/* ---------- DESKTOP MENU ---------- */}
         <ul className="desktop-menu">
           <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/about-us">About</NavLink></li>
+
           <li><NavLink to="/contact-us">Contact</NavLink></li>
           <li><NavLink to="/syllabus">Syllabus</NavLink></li>
           <li><NavLink to="/materials">Materials</NavLink></li>
           <li><NavLink to="/notices">Jobs</NavLink></li>
-          <li>
-            <a
-              href="https://omegapgcollegemca.ac.in/faculty-list-2174-MCA.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Faculty
-            </a>
-          </li>
-
-
-
-
-
-
           {!user ? (
             <Link to="/login">
               <button className="logout-button">Login</button>
